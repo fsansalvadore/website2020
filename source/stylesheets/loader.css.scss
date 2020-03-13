@@ -1,0 +1,253 @@
+.loaderOut {
+  animation: loaderOut 1s cubic-bezier(.59,.13,.22,.98) both;
+}
+
+@keyframes loaderOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+    filter: blur(1rem);
+  }
+}
+
+#loader_container {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  overflow: none;
+  background: url("/images/noise.gif");
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 30px;
+  display: flex;
+  z-index: 9000;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+
+  .anim-container {
+    margin: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .grid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 9000;
+  }
+
+  .vl {
+    /*height: 100%;*/
+    // border-right: 1px solid #222;
+    min-width: 1px !important;
+    background: #222;
+    position: absolute;
+    z-index: 9100;
+    animation: revealY 1s ease 1s forwards;
+
+    &:nth-of-type(1), &:nth-of-type(6) {
+      background: #1ae88f;
+    }
+  }
+
+  .vl:nth-of-type(1) {
+    left: 0%;
+  }
+
+  .vl:nth-of-type(2) {
+    left: 20%;
+  }
+
+  .vl:nth-of-type(3) {
+    left: 40%;
+  }
+
+  .vl:nth-of-type(4) {
+    left: 60%;
+  }
+
+  .vl:nth-of-type(5) {
+    left: 80%;
+  }
+
+  .vl:nth-of-type(6) {
+    left: 100%;
+  }
+
+  .hl {
+    /*width: 100%;*/
+    min-height: 1px !important;
+    background: #222;
+    // border-bottom: 1px solid #222;
+    position: absolute;
+    z-index: 9100;
+    animation: revealX 1s ease 0.8s forwards;
+
+    &:nth-of-type(1), &:nth-of-type(6) {
+      background: #1ae88f;
+    }
+  }
+
+  .hl:nth-of-type(1) {
+    bottom: 0;
+  }
+
+  .hl:nth-of-type(2) {
+    bottom: 20%;
+  }
+
+  .hl:nth-of-type(3) {
+    bottom: 40%;
+  }
+
+  .hl:nth-of-type(4) {
+    bottom: 60%;
+  }
+
+  .hl:nth-of-type(5) {
+    bottom: 80%;
+  }
+
+  .hl:nth-of-type(6) {
+    bottom: 100%;
+  }
+
+  @keyframes revealX {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  @keyframes revealY {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+
+  .hey-there, .fullstack-dev, .with-a-passion {
+    position: absolute;
+    left: 20%;
+    height: 20%;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  .hey-there {
+    bottom: calc(60% - 10px);
+    width: 40%;
+  }
+
+  .fullstack-dev, .with-a-passion {
+    bottom: calc(40% - 10px);
+    width: 80%;
+  }
+
+  .hey-there div, .fullstack-dev div, .with-a-passion div {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    font-size: 50px;
+    line-height: 0.8;
+    bottom: 10px;
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+  }
+
+  .fullstack-dev div {
+    animation: moveTextLineUp 0.8s cubic-bezier(.66,0,.3,.98) 4.5s both;
+  }
+
+  .anim-container span {
+    bottom: 0;
+    margin-right: 12px;
+    display: inline-block;
+  }
+
+  .hey-there span:nth-of-type(1) {
+    animation: textEnter 2s cubic-bezier(.66,0,.3,.98) 1.3s both;
+  }
+  .hey-there span:nth-of-type(2) {
+    animation: textEnter 2s cubic-bezier(.66,0,.3,.98) 1.4s both;
+  }
+  .hey-there span:nth-of-type(3) {
+    animation: textEnter 2s cubic-bezier(.66,0,.3,.98) 1.5s both;
+  }
+
+  .fullstack-dev span:nth-of-type(1) {
+    animation: textEnter 4s cubic-bezier(.66,0,.3,.98) 2.9s both;
+  }
+  .fullstack-dev span:nth-of-type(2) {
+    animation: textEnter 4s cubic-bezier(.66,0,.3,.98) 3s both;
+  }
+  .fullstack-dev span:nth-of-type(3) {
+    animation: textEnter 4s cubic-bezier(.66,0,.3,.98) 3.1s both;
+  }
+  .fullstack-dev span:nth-of-type(4) {
+    animation: textEnter 4s cubic-bezier(.66,0,.3,.98) 3.2s both;
+  }
+  .fullstack-dev span:nth-of-type(5) {
+    animation: textEnter 4s cubic-bezier(.66,0,.3,.98) 3.3s both;
+  }
+
+  .with-a-passion span:nth-of-type(1) {
+    animation: textEnter 2.9s cubic-bezier(.66,0,.3,.98) 4.4s both;
+  }
+  .with-a-passion span:nth-of-type(2) {
+    animation: textEnter 2.9s cubic-bezier(.66,0,.3,.98) 4.5s both;
+  }
+  .with-a-passion span:nth-of-type(3) {
+    animation: textEnter 2.9s cubic-bezier(.66,0,.3,.98) 4.6s both;
+  }
+  .with-a-passion span:nth-of-type(4) {
+    animation: textEnter 2.9s cubic-bezier(.66,0,.3,.98) 4.7s both;
+  }
+  .with-a-passion span:nth-of-type(5) {
+    animation: textEnter 2.9s cubic-bezier(.66,0,.3,.98) 4.8s both;
+  }
+
+
+  @keyframes textEnter {
+    0% {
+      transform: translateY(400%);
+    }
+    30% {
+      transform: translateY(0);
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes moveTextLineUp {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-150%);
+    }
+  }
+
+}

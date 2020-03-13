@@ -1,3 +1,13 @@
+// window.addEventListener('load', (event) => {
+//   const loader = document.querySelector('#loader_container');
+//   setTimeout(() => {
+//     loader.classList.add("loaderOut");
+//     setTimeout(() => {
+//       loader.parentNode.removeChild(loader);
+//     }, 2000);
+//   }, 6500);
+// });
+
 const end = document.getElementById('end');
 const body = document.querySelector('body');
 const progressBar = document.querySelector('#bar');
@@ -5,6 +15,37 @@ const progressArrow = document.querySelector('#arrow');
 const cursor = document.querySelector('.cursor');
 const links = document.querySelectorAll('a');
 let scrollProgress;
+
+// Menu anchor links
+
+$(document).ready(function() {
+  $("a.smooth-scroll").on('click', function(event) {
+      event.preventDefault();
+      var section = $(this).attr("href");
+      $('html, body').animate({
+          scrollTop: $(section).offset().top
+      }, 750, function() {
+          location.hash = section;
+      });
+      return false;
+  });
+});
+
+$(document).on("scroll", function() {
+  var scrollDistance = $(window).scrollTop();
+  $(".page-section").each(function(i) {
+    if ($(this).offset().top <= scrollDistance + 10) {
+      $("nav li a").removeClass("menu-active");
+      $("nav li a")
+        .eq(i)
+        .addClass("menu-active");
+    } else {
+      $("nav li a")
+        .eq(i)
+        .removeClass("menu-active");
+    }
+  });
+});
 
 window.addEventListener('scroll', () => {
   scrollProgress = window.pageYOffset * 100 / (body.offsetHeight - window.innerHeight);
@@ -31,42 +72,30 @@ observer = new IntersectionObserver((entries) => {
 animItems.forEach(item => {
   observer.observe(item);
 });
-// custom cursor
 
-// document.addEventListener('mousemove', e => {
-//   cursor.setAttribute("style", "top: " + (e.pageY - 12) + "px; left: " + (e.pageX - 12) + "px");
-// })
+// Custom cursor
 
-// links.forEach((link) => {
-//   link.addEventListener('mouseover', () => {
-//     console.log("Hovered on link.");
-//     cursor.classList.add('expand');
-//     setTimeout(() => {
-//       cursor.classList.remove('expand');
-//     }, 2000);
-//   });
-// });
+document.addEventListener('mousemove', e => {
+  cursor.setAttribute("style", "top: " + (e.pageY) + "px; left: " + (e.pageX) + "px");
+})
 
-// work hover
+links.forEach((link) => {
+  link.addEventListener('mouseover', () => {
+    cursor.classList.add('expand');
+  });
+  link.addEventListener('mouseout', () => {
+    cursor.classList.remove('expand');
+  });
+});
+
+// Work dyamic hover
 
 const works = document.querySelectorAll('.work_list a');
 const thumb = document.querySelector('.work-thumb');
 let mouseX;
 let mouseY;
 
-// console.log(works);
-
-// document.addEventListener('mousemove', e => {
-//   mouseX = e.clientX;
-//   mouseY = e.clientY;
-//   console.log("X: " + mouseX + " — Y: " + mouseY);
-
-// });
-
-
 works.forEach((work) => {
-  console.log(work.dataset.img);
-
   work.addEventListener('mouseover', () => {
     thumb.style.display = "block";
     thumb.style.opacity = "0.9";
@@ -84,4 +113,64 @@ document.addEventListener('mousemove', e => {
   thumb.style.top = (e.pageY - 145) + "px";
   thumb.style.left = (e.pageX - 250) + "px";
 })
+
+// Paroller parallax
+
+$('.my-paroller').paroller();
+
+$("#h1_title").paroller({
+  factor: 0.1,
+  factorXs: 0.1,
+  factorSm: 0.1,
+  factorMd: 0.1,
+  factorLg: 0.1,
+  type: "foreground",
+  direction: "vertical"
+});
+$("#silhouette").paroller({
+  factor: 0.2,
+  factorXs: 0.2,
+  factorSm: 0.2,
+  factorMd: 0.2,
+  factorLg: 0.2,
+  type: "foreground",
+  direction: "vertical"
+});
+$("#dots_front").paroller({
+  factor: 0.5,
+  factorXs: 0.5,
+  factorSm: 0.5,
+  factorMd: 0.5,
+  factorLg: 0.5,
+  type: "foreground",
+  direction: "vertical"
+});
+$("#dots_back").paroller({
+  factor: -0.1,
+  factorXs: -0.1,
+  factorSm: -0.1,
+  factorMd: -0.1,
+  factorLg: -0.1,
+  type: "foreground",
+  direction: "vertical"
+});
+$("#subtitle").paroller({
+  factor: 0.3,
+  factorXs: 0.3,
+  factorSm: 0.3,
+  factorMd: 0.3,
+  factorLg: 0.3,
+  type: "foreground",
+  direction: "vertical"
+});
+// $("#intro_text").paroller({
+//   factor: 0.1,
+//   factorXs: 0.1,
+//   factorSm: 0.1,
+//   factorMd: 0.1,
+//   factorLg: 0.1,
+//   type: "foreground",
+//   direction: "vertical"
+// });
+
 
