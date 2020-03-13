@@ -17,6 +17,7 @@ const progressArrow = document.querySelector('#arrow');
 const cursor = document.querySelector('.cursor');
 const links = document.querySelectorAll('a');
 const scrollDownText = document.querySelector('.scroll_down-text');
+const social = document.querySelector('.social-container');
 let scrollProgress;
 
 // Menu anchor links
@@ -59,6 +60,12 @@ window.addEventListener('scroll', () => {
     scrollDownText.classList.add('fadeOut');
   } else {
     scrollDownText.classList.remove('fadeOut');
+  }
+
+  if (scrollProgress > 98 && window.screen.width < 1000) {
+    social.classList.remove('fadeOut');
+  } else {
+    social.classList.add('fadeOut');
   }
 })
 

@@ -161,14 +161,14 @@ header.headerIn {
   .hey-there, .fullstack-dev, .with-a-passion {
     position: absolute;
     left: 20%;
-    height: 20%;
+    height: 40%;
     z-index: 9999;
     overflow: hidden;
   }
 
   .hey-there {
     bottom: calc(60% - 10px);
-    width: 40%;
+    width: 60%;
   }
 
   .fullstack-dev, .with-a-passion {
@@ -181,7 +181,7 @@ header.headerIn {
     font-weight: bold;
     position: absolute;
     font-size: 50px;
-    line-height: 0.8;
+    line-height: 110%;
     bottom: 10px;
     width: 100%;
     font-family: Helvetica, sans-serif;
