@@ -6,7 +6,17 @@
   .cursor {
     display: none !important
   }
+  .hey-there div, .fullstack-dev div, .with-a-passion div {
+    font-size: 20px !important;
+  }
 
+  .anim-container span {
+    margin-right: 6px !important;
+  }
+
+  header {
+    height: 80vh !important;
+  }
   .half {
     width: 100%;
   }
@@ -42,9 +52,13 @@
     padding: 25px 0 !important;
   }
 
+  .fixed_elements .right .social-container {
+    right: 0 !important;
+  }
+
   section>.container {
     width: auto !important;
-    margin: 0 60px !important;
+    margin: 0 15px 0 60px !important;
   }
 
   section li {
@@ -60,8 +74,12 @@
     padding: 7px 0 !important;
   }
 
+  .fixed_elements .right .social-container a {
+    margin-top: 0 !important;
+  }
+
   .paragraph {
-    font-size: 14px !important;
+    font-size: 16px !important;
     /*line-height: 120% !important;*/
   }
   .section {
@@ -69,7 +87,7 @@
   }
 
   .stroke_title {
-    font-size: 30px !important;
+    font-size: 42px !important;
     line-height: 75%;
   }
 
@@ -80,6 +98,7 @@
   footer {
     padding: 40px 0 30px 0 !important;
     flex-direction: column;
+    font-size: 14px !important;
   }
 
   footer .right * {
@@ -94,7 +113,4 @@
   .container {
     margin: 0 !important;
   }
-}
-
-@media (max-width: 599px) {
 }
