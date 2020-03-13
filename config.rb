@@ -5,6 +5,14 @@ activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
+# ES6 support
+::Sprockets::ES6.configure do |config|
+  config.marshal_load({
+    modules: 'amd',
+    moduleIds: true
+  })
+end
+
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
@@ -40,7 +48,16 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
+configure :development do
+  activate :livereload
+  config[:host] = "http://localhost:4567"
+end
+
 configure :build do
   activate :minify_css
   activate :minify_javascript
+end
+
+activate :s3_sync do |s3|
+  s3.prefer_gzip = true
 end

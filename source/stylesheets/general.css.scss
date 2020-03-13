@@ -95,6 +95,11 @@ a.menu-active {
   font-weight: bold;
 }
 
+.fadeOut {
+  opacity: 0;
+  bottom: -10px !important;
+}
+
 .fixed_elements {
   width: 100%;
   height: 100%;
@@ -122,6 +127,7 @@ a.menu-active {
       display: inline;
       font-size: 11px;
       font-weight: bold;
+      transition: opacity 0.3s ease, bottom 0.3s ease;
       text-transform: uppercase;
     }
 

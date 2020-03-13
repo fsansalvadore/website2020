@@ -1,12 +1,14 @@
-// window.addEventListener('load', (event) => {
-//   const loader = document.querySelector('#loader_container');
-//   setTimeout(() => {
-//     loader.classList.add("loaderOut");
-//     setTimeout(() => {
-//       loader.parentNode.removeChild(loader);
-//     }, 2000);
-//   }, 6500);
-// });
+window.addEventListener('load', (event) => {
+  const loader = document.querySelector('#loader_container');
+  const header = document.querySelector('header');
+  setTimeout(() => {
+    loader.classList.add("loaderOut");
+    header.classList.add("headerIn");
+    setTimeout(() => {
+      loader.parentNode.removeChild(loader);
+    }, 2000);
+  }, 6500);
+});
 
 const end = document.getElementById('end');
 const body = document.querySelector('body');
@@ -14,6 +16,7 @@ const progressBar = document.querySelector('#bar');
 const progressArrow = document.querySelector('#arrow');
 const cursor = document.querySelector('.cursor');
 const links = document.querySelectorAll('a');
+const scrollDownText = document.querySelector('.scroll_down-text');
 let scrollProgress;
 
 // Menu anchor links
@@ -51,6 +54,12 @@ window.addEventListener('scroll', () => {
   scrollProgress = window.pageYOffset * 100 / (body.offsetHeight - window.innerHeight);
   progressBar.style.height = Math.ceil(scrollProgress) + "%";
   progressArrow.style.top = Math.ceil(scrollProgress) + "%";
+
+  if (scrollProgress > 90) {
+    scrollDownText.classList.add('fadeOut');
+  } else {
+    scrollDownText.classList.remove('fadeOut');
+  }
 })
 
 const animItems = document.querySelectorAll('.anim');
@@ -60,7 +69,7 @@ const config = {
   rootMargin: '20% 0% -20% 0%'
 };
 
-observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.intersectionRatio > 0) {
       entry.target.classList.add('anim_fadeInUp');
@@ -163,14 +172,3 @@ $("#subtitle").paroller({
   type: "foreground",
   direction: "vertical"
 });
-// $("#intro_text").paroller({
-//   factor: 0.1,
-//   factorXs: 0.1,
-//   factorSm: 0.1,
-//   factorMd: 0.1,
-//   factorLg: 0.1,
-//   type: "foreground",
-//   direction: "vertical"
-// });
-
-

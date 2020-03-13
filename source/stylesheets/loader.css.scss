@@ -2,6 +2,10 @@
   animation: loaderOut 1s cubic-bezier(.59,.13,.22,.98) both;
 }
 
+header.headerIn {
+  animation: headerIn 1.9s cubic-bezier(.59,.13,.22,.98) both;
+}
+
 @keyframes loaderOut {
   0% {
     opacity: 1;
@@ -15,6 +19,16 @@
   }
 }
 
+@keyframes headerIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 #loader_container {
   * {
     margin: 0;
