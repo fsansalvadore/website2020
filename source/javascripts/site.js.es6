@@ -38,7 +38,7 @@ $(document).ready(function() {
 $(document).on("scroll", function() {
   var scrollDistance = $(window).scrollTop();
   $(".page-section").each(function(i) {
-    if ($(this).offset().top <= scrollDistance + 10) {
+    if ($(this).offset().top <= scrollDistance + 300) {
       $("nav li a").removeClass("menu-active");
       $("nav li a")
         .eq(i)
