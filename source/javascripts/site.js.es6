@@ -164,7 +164,7 @@ const observer = new IntersectionObserver((entries) => {
 }, config);
 
 animItems.forEach(item => {
-  if ('IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window || !!window.IntersectionObserver) {
     observer.observe(item);
   } else {
     item.classList.add('anim_fadeInUp');
