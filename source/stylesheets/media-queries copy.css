@@ -1,0 +1,116 @@
+@media all and (max-width: 1000px) {
+  body, a, a:hover {
+    cursor: auto !important;
+  }
+
+  .cursor {
+    display: none !important
+  }
+  .hey-there div, .fullstack-dev div, .with-a-passion div {
+    font-size: 20px !important;
+  }
+
+  .anim-container span {
+    margin-right: 6px !important;
+  }
+
+  header {
+    height: 80vh !important;
+  }
+  .half {
+    width: 100%;
+  }
+
+  .logo {
+    width: 30px !important;
+    height: auto;
+  }
+
+  .fixed_elements .left {
+    top: 20px !important;
+    left: 12px !important;
+    bottom: 20px !important;
+  }
+
+  .fixed_elements .right {
+    top: 20px !important;
+    right: 12px !important;
+    bottom: 20px !important;
+  }
+
+  .scroll_down-text {
+    display: none !important;
+  }
+
+  .scroll_progress {
+    top: 110px !important;
+    bottom: 0px !important;
+  }
+
+  .work_link-big {
+    font-size: 25px !important;
+    padding: 25px 0 !important;
+  }
+
+  .fixed_elements .right .social-container {
+    right: 0 !important;
+  }
+
+  section>.container {
+    width: auto !important;
+    margin: 0 15px 0 60px !important;
+  }
+
+  section li {
+    font-size: 12px !important;
+  }
+
+  .nav-container {
+    display: none !important;
+    right: 0px !important;
+    top: 0px !important;
+  }
+  .fixed_elements .right .nav-container li a {
+    padding: 7px 0 !important;
+  }
+
+  .fixed_elements .right .social-container a {
+    margin-top: 0 !important;
+  }
+
+  .paragraph {
+    font-size: 16px !important;
+    /*line-height: 120% !important;*/
+  }
+  .section {
+    padding: 60px 0 100px 0 !important;
+  }
+
+  .stroke_title {
+    font-size: 42px !important;
+    line-height: 75%;
+  }
+
+  section {
+    padding: 60px 0 !important;
+  }
+
+  footer {
+    padding: 40px 0 30px 0 !important;
+    flex-direction: column;
+    font-size: 14px !important;
+  }
+
+  footer .right * {
+    margin-left: 0 !important;
+    display: block !important;
+    margin-top: 20px !important;
+  }
+  .container_inner, .container {
+    flex-direction: column !important;
+  }
+
+  .container {
+    margin: 0 !important;
+  }
+}
