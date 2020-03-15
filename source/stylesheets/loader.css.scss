@@ -41,7 +41,7 @@ header.headerIn {
   width: 100vw;
   height: 100vh;
   margin: 0;
-  padding: 30px 30px 10% 30px;
+  padding: 30px 30px 200px 30px;
   display: flex;
   z-index: 9000;
   position: fixed;
@@ -49,7 +49,7 @@ header.headerIn {
   justify-content: center;
 
   .anim-container {
-    margin: 30px 30px 10% 30px;
+    margin: 30px 30px 200px 30px;
     position: absolute;
     left: 0;
     right: 0;
