@@ -1,5 +1,17 @@
 const loader = document.querySelector('#loader_container');
 const header = document.querySelector('header');
+const end = document.getElementById('end');
+const body = document.querySelector('body');
+const progressBar = document.querySelector('#bar');
+const progressArrow = document.querySelector('#arrow');
+const cursor = document.querySelector('.cursor');
+const links = document.querySelectorAll('a');
+const scrollDownText = document.querySelector('.scroll_down-text');
+const social = document.querySelector('.social-container');
+let scrollProgress;
+let mouseX;
+let mouseY;
+
 window.addEventListener('load', (event) => {
   setTimeout(() => {
     loader.classList.add("loaderOut");
@@ -15,8 +27,6 @@ window.addEventListener('load', (event) => {
   if (window.matchMedia("(min-width: 1000px)").matches) {
     const works = document.querySelectorAll('.work_list a');
     const thumb = document.querySelector('.work-thumb');
-    let mouseX;
-    let mouseY;
 
     works.forEach((work) => {
       work.addEventListener('mouseover', () => {
@@ -36,18 +46,10 @@ window.addEventListener('load', (event) => {
       thumb.style.top = (e.pageY - 145) + "px";
       thumb.style.left = (e.pageX - 250) + "px";
     })
+  } else {
+    return
   }
 });
-
-const end = document.getElementById('end');
-const body = document.querySelector('body');
-const progressBar = document.querySelector('#bar');
-const progressArrow = document.querySelector('#arrow');
-const cursor = document.querySelector('.cursor');
-const links = document.querySelectorAll('a');
-const scrollDownText = document.querySelector('.scroll_down-text');
-const social = document.querySelector('.social-container');
-let scrollProgress;
 
 // Menu anchor links
 
@@ -77,6 +79,23 @@ $(document).on("scroll", function() {
         .eq(i)
         .removeClass("menu-active");
     }
+  });
+});
+
+// Custom cursor
+
+document.addEventListener('mousemove', e => {
+  mouseY = e.pageY
+  mouseX = e.pageX
+  cursor.setAttribute("style", "top: " + mouseY + "px; left: " + mouseX + "px");
+})
+
+links.forEach((link) => {
+  link.addEventListener('mouseover', () => {
+    cursor.classList.add('expand');
+  });
+  link.addEventListener('mouseout', () => {
+    cursor.classList.remove('expand');
   });
 });
 
@@ -116,21 +135,6 @@ const observer = new IntersectionObserver((entries) => {
 
 animItems.forEach(item => {
   observer.observe(item);
-});
-
-// Custom cursor
-
-document.addEventListener('mousemove', e => {
-  cursor.setAttribute("style", "top: " + (e.pageY) + "px; left: " + (e.pageX) + "px");
-})
-
-links.forEach((link) => {
-  link.addEventListener('mouseover', () => {
-    cursor.classList.add('expand');
-  });
-  link.addEventListener('mouseout', () => {
-    cursor.classList.remove('expand');
-  });
 });
 
 

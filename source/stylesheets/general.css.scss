@@ -86,18 +86,16 @@ body {
 a {
   color: #fff;
   text-decoration: none;
-  // z-index: 999;
 }
 
 a.menu-active {
   opacity: 1 !important;
   color: #1ae88f;
-  font-weight: bold;
 }
 
 .fadeOut {
   opacity: 0;
-  bottom: -10px !important;
+  bottom: -10px;
 }
 
 .fixed_elements {
@@ -158,6 +156,7 @@ a.menu-active {
       // }
 
       #arrow {
+        display: none;
         position: absolute;
         height: 5px;
         width: 5px;
@@ -196,6 +195,10 @@ a.menu-active {
         opacity: 0.5;
         z-index: 8000;
         pointer-events: auto;
+      }
+
+      li a:hover {
+        opacity: 0.8;
       }
     }
 
@@ -579,6 +582,10 @@ footer {
     bottom: 0;
   }
 
+  .fixed_elements .left .scroll_progress #arrow {
+    display: block;
+  }
+
   .work_link-big {
     font-size: 80px;
     padding: 40px 0;
@@ -586,6 +593,11 @@ footer {
 
   .fixed_elements .right .social-container {
     right: -10px;
+  }
+
+  .fadeOut {
+    opacity: 1;
+    bottom: 0px;
   }
 
   section>.container {
