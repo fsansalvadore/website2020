@@ -26,7 +26,7 @@ header.headerIn {
   }
   100% {
     transform: scale(1);
-    opacity: 1;
+    opacity: 1 !important;
   }
 }
 #loader_container {
@@ -183,6 +183,7 @@ header.headerIn {
     font-size: 1.6em;
     line-height: 110%;
     bottom: 10px;
+    overflow: hidden;
     width: 100%;
     font-family: Helvetica, sans-serif;
   }
@@ -205,6 +206,14 @@ header.headerIn {
   }
   .hey-there span:nth-of-type(3) {
     animation: textEnter 2s cubic-bezier(.66,0,.3,.98) 1.5s both;
+  }
+
+  #wave {
+    position: relative;
+    transform-origin: 80% 80%;
+    margin-left: 15px;
+    margin-top: 25px;
+    animation: waveHand 1.3s ease alternate both infinite;
   }
 
   .fullstack-dev span:nth-of-type(1) {
@@ -264,9 +273,18 @@ header.headerIn {
     }
   }
 
+  @keyframes waveHand {
+    0% {
+      transform: rotate(-30deg);
+    }
+    100% {
+      transform: rotate(30%);
+    }
+  }
+
 }
 
-@media screen and (min-width: 1000px) {
+@media all and (min-width: 1000px) {
   #loader_container {
     align-items: center;
     padding: 30px;

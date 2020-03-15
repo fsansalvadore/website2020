@@ -1,13 +1,42 @@
+const loader = document.querySelector('#loader_container');
+const header = document.querySelector('header');
 window.addEventListener('load', (event) => {
-  const loader = document.querySelector('#loader_container');
-  const header = document.querySelector('header');
   setTimeout(() => {
     loader.classList.add("loaderOut");
     header.classList.add("headerIn");
+    header.style.opacity = "1";
     setTimeout(() => {
       loader.parentNode.removeChild(loader);
     }, 2000);
   }, 6500);
+
+  // Work dyamic hover
+
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    const works = document.querySelectorAll('.work_list a');
+    const thumb = document.querySelector('.work-thumb');
+    let mouseX;
+    let mouseY;
+
+    works.forEach((work) => {
+      work.addEventListener('mouseover', () => {
+        thumb.style.display = "block";
+        thumb.style.opacity = "0.9";
+        thumb.style.backgroundImage = "url('" + work.dataset.img + "')";
+      });
+
+      work.addEventListener('mouseout', () => {
+        thumb.style.display = "none";
+        thumb.style.opacity = "0";
+        thumb.style.backgroundImage = "none";
+      });
+    })
+
+    document.addEventListener('mousemove', e => {
+      thumb.style.top = (e.pageY - 145) + "px";
+      thumb.style.left = (e.pageX - 250) + "px";
+    })
+  }
 });
 
 const end = document.getElementById('end');
@@ -104,31 +133,6 @@ links.forEach((link) => {
   });
 });
 
-// Work dyamic hover
-
-const works = document.querySelectorAll('.work_list a');
-const thumb = document.querySelector('.work-thumb');
-let mouseX;
-let mouseY;
-
-works.forEach((work) => {
-  work.addEventListener('mouseover', () => {
-    thumb.style.display = "block";
-    thumb.style.opacity = "0.9";
-    thumb.style.backgroundImage = "url('" + work.dataset.img + "')";
-  });
-
-  work.addEventListener('mouseout', () => {
-    thumb.style.display = "none";
-    thumb.style.opacity = "0";
-    thumb.style.backgroundImage = "none";
-  });
-})
-
-document.addEventListener('mousemove', e => {
-  thumb.style.top = (e.pageY - 145) + "px";
-  thumb.style.left = (e.pageX - 250) + "px";
-})
 
 // Paroller parallax
 
