@@ -8,6 +8,9 @@ const cursor = document.querySelector('.cursor');
 const links = document.querySelectorAll('a');
 const scrollDownText = document.querySelector('.scroll_down-text');
 const social = document.querySelector('.social-container');
+const exitBtn = document.getElementById('exit_modal');
+const privacyModal = document.getElementById('privacy_modal-container');
+const privacyOpen = document.getElementById('privacy_open');
 let scrollProgress;
 let mouseX;
 let mouseY;
@@ -50,6 +53,28 @@ window.addEventListener('load', (event) => {
     return
   }
 });
+
+privacyOpen.addEventListener('click', (e) => {
+  e.preventDefault();
+  body.style.overflowY = 'none';
+  privacyModal.style.display = 'flex';
+  exitBtn.style.display = 'flex';
+  setTimeout(() => {
+    privacyModal.classList.add('show');
+    exitBtn.classList.add('show');
+  }, 200);
+})
+
+exitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  privacyModal.classList.remove('show');
+  exitBtn.classList.remove('show');
+  body.style.overflowY = 'auto';
+  setTimeout(() => {
+    privacyModal.style.display = 'none';
+    exitBtn.style.display = 'none';
+  }, 200);
+})
 
 // Menu anchor links
 

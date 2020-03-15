@@ -68,13 +68,15 @@ header.headerIn {
     /*height: 100%;*/
     // border-right: 1px solid #222;
     min-width: 1px !important;
-    background: #222;
+    background: #fff;
+    opacity: 0.1;
     position: absolute;
     z-index: 9100;
-    animation: revealY 1s ease 1s forwards;
+    animation: revealY 1s cubic-bezier(.57,.06,.25,.99) 1s forwards;
 
     &:nth-of-type(1), &:nth-of-type(6) {
       background: #1ae88f;
+      opacity: 1;
     }
   }
 
@@ -105,14 +107,16 @@ header.headerIn {
   .hl {
     /*width: 100%;*/
     min-height: 1px !important;
-    background: #222;
+    background: #fff;
+    opacity: 0.1;
     // border-bottom: 1px solid #222;
     position: absolute;
     z-index: 9100;
-    animation: revealX 1s ease 0.8s forwards;
+    animation: revealX 1s cubic-bezier(.57,.06,.25,.99) 0.8s forwards;
 
     &:nth-of-type(1), &:nth-of-type(6) {
       background: #1ae88f;
+      opacity: 1;
     }
   }
 
@@ -162,6 +166,7 @@ header.headerIn {
     position: absolute;
     left: 20%;
     height: 40%;
+    opacity: 0.8;
     z-index: 9999;
     overflow: hidden;
   }
