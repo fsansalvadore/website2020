@@ -163,13 +163,16 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, config);
 
-animItems.forEach(item => {
-  if ('IntersectionObserver' in window || !!window.IntersectionObserver) {
+if ('IntersectionObserver' in window || !!window.IntersectionObserver) {
+  animItems.forEach(item => {
     observer.observe(item);
-  } else {
+  });
+} else {
+  animItems.forEach(item => {
+    alert("NO INTERSECTION OBSERVER");
     item.classList.add('anim_fadeInUp');
-  }
-});
+  });
+}
 
 
 // Paroller parallax
