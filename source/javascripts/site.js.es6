@@ -144,11 +144,10 @@ window.addEventListener('scroll', () => {
 
 const animItems = document.querySelectorAll('.anim');
 
-if (browser.name === 'iOS Safari' && browser.version < 13.3) {
-  animItems.forEach(item => {
-    item.classList.add('anim_fadeInUp');
-  });
-};
+// if (browser.name === 'iOS Safari' && browser.version < 13.3) {
+//   animItems.forEach(item => {
+//   });
+// };
 
 const config = {
   root: null,
@@ -165,7 +164,11 @@ const observer = new IntersectionObserver((entries) => {
 }, config);
 
 animItems.forEach(item => {
-  observer.observe(item);
+  if ('IntersectionObserver' in window) {
+    observer.observe(item);
+  } else {
+    item.classList.add('anim_fadeInUp');
+  }
 });
 
 
