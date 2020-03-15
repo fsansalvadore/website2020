@@ -144,6 +144,12 @@ window.addEventListener('scroll', () => {
 
 const animItems = document.querySelectorAll('.anim');
 
+if (browser.name === 'Safari' && browser.version < 12) {
+  animItems.forEach(item => {
+    item.classList.add('anim_fadeInUp');
+  });
+};
+
 const config = {
   root: null,
   rootMargin: '20% 0% -20% 0%'
