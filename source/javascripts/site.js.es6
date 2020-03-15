@@ -144,7 +144,7 @@ window.addEventListener('scroll', () => {
 
 const animItems = document.querySelectorAll('.anim');
 
-if (browser.name === 'Safari' && browser.version < 12) {
+if (browser.name === 'iOS Safari' && browser.version < 13.3) {
   animItems.forEach(item => {
     item.classList.add('anim_fadeInUp');
   });
