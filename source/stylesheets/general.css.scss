@@ -579,7 +579,7 @@ footer {
     font-size: 10vw;
   }
 
-  span.scroll_down-text {
+  .fixed_elements .left span.scroll_down-text {
     display: inline;
   }
 
@@ -644,7 +644,7 @@ footer {
     padding: 120px 0 100px 0;
 
     &:nth-of-type(1) {
-      padding: 150px 0 220px 0;
+      padding: 150px 0 180px 0;
     }
   }
 
@@ -665,5 +665,11 @@ footer {
 
   .container {
     margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 999px) {
+  .stroke_title {
+    font-size: 70px;
   }
 }
