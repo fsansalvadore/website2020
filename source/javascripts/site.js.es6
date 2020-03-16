@@ -142,6 +142,8 @@ window.addEventListener('scroll', () => {
   }
 })
 
+IntersectionObserver.prototype.POLL_INTERVAL = 100; // Time in milliseconds.
+
 const animItems = document.querySelectorAll('.anim');
 
 // if (browser.name === 'iOS Safari' && browser.version < 13.3) {
@@ -169,7 +171,6 @@ if ('IntersectionObserver' in window || !!window.IntersectionObserver) {
   });
 } else {
   animItems.forEach(item => {
-    alert("NO INTERSECTION OBSERVER");
     item.classList.add('anim_fadeInUp');
   });
 }
