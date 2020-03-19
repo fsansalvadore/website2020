@@ -94,7 +94,7 @@ a.menu-active {
 }
 
 .fadeOut {
-  opacity: 0;
+  opacity: 0 !important;
   bottom: -10px;
 }
 

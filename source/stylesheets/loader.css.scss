@@ -6,6 +6,10 @@ header.headerIn {
   animation: headerIn 1.9s cubic-bezier(.59,.13,.22,.98) both;
 }
 
+.fixedIn {
+  animation: headerIn 1.5s cubic-bezier(.59,.13,.22,.98) both;
+}
+
 @keyframes loaderOut {
   0% {
     opacity: 1;

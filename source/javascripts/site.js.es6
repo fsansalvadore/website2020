@@ -1,5 +1,6 @@
 const loader = document.querySelector('#loader_container');
 const header = document.querySelector('header');
+const fixedElements = document.querySelector('.fixed_elements');
 const end = document.getElementById('end');
 const body = document.querySelector('body');
 const progressBar = document.querySelector('#bar');
@@ -11,6 +12,7 @@ const social = document.querySelector('.social-container');
 const exitBtn = document.getElementById('exit_modal');
 const privacyModal = document.getElementById('privacy_modal-container');
 const privacyOpen = document.getElementById('privacy_open');
+
 let scrollProgress;
 let mouseX;
 let mouseY;
@@ -19,6 +21,7 @@ window.addEventListener('load', (event) => {
   setTimeout(() => {
     loader.classList.add("loaderOut");
     header.classList.add("headerIn");
+    fixedElements.classList.add("fixedIn");
     header.style.opacity = "1";
     setTimeout(() => {
       loader.parentNode.removeChild(loader);
