@@ -17,16 +17,24 @@ let scrollProgress;
 let mouseX;
 let mouseY;
 
+const loaderOut = () => {
+  loader.classList.add("loaderOut");
+  header.classList.add("headerIn");
+  fixedElements.classList.add("fixedIn");
+  header.style.opacity = "1";
+  setTimeout(() => {
+    loader.parentNode.removeChild(loader);
+  }, 2000);
+}
+
 window.addEventListener('load', (event) => {
   setTimeout(() => {
-    loader.classList.add("loaderOut");
-    header.classList.add("headerIn");
-    fixedElements.classList.add("fixedIn");
-    header.style.opacity = "1";
-    setTimeout(() => {
-      loader.parentNode.removeChild(loader);
-    }, 2000);
+    loaderOut();
   }, 6500);
+
+  loader.addEventListener('click', () => {
+    loaderOut();
+  })
 
   // Work dyamic hover
 
@@ -140,7 +148,7 @@ window.addEventListener('scroll', () => {
 
   if (scrollProgress > 98 && window.screen.width < 1000) {
     social.classList.remove('fadeOut');
-  } else {
+  } else if (scrollProgress < 98 && window.screen.width < 1000) {
     social.classList.add('fadeOut');
   }
 })

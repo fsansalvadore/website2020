@@ -6,8 +6,35 @@ header.headerIn {
   animation: headerIn 1.9s cubic-bezier(.59,.13,.22,.98) both;
 }
 
+.skip {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left:0;
+  right:0;
+  bottom: 9%;
+  margin: 0 auto;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: rgba(#fff, 0.3);
+  will-change: tranform, opacity;
+  animation: fadeInUpSm 2s ease 1.5s both;
+}
+
+@keyframes fadeInUpSm {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .fixed_elements.fixedIn {
-  animation: headerIn 1.5s cubic-bezier(.59,.13,.22,.98) both;
+  animation: headerIn .5s cubic-bezier(.59,.13,.22,.98) both;
   opacity: 1;
 }
 
