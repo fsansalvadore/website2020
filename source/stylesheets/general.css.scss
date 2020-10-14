@@ -38,6 +38,7 @@ body, a, a:hover {
 
 body {
   font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
   color: #fff;
 }
 
@@ -427,19 +428,26 @@ h2 {
 
 .work_list {
   width: 100%;
+
+  a p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    opacity: 0.4;
+    font-style: italic;
+  }
 }
 
 .work_link-big {
-  font-size: 25px;
-  padding: 25px 0;
+  font-size: 28px;
+  padding: 25px 0 0 0;
   font-weight: 900;
   line-height: 100%;
-  // font-family: 'Bowlby One SC', sans-serif;
   width: 100%;
   display: block;
   text-transform: uppercase;
-  text-align: center;
-  opacity: 0.5;
+  text-align: left;
+  opacity: 0.75;
 }
 
 .work-thumb {
@@ -597,7 +605,7 @@ footer {
 
   .work_link-big {
     font-size: 80px;
-    padding: 40px 0;
+    padding: 40px 0 0 0;
   }
 
   .fixed_elements .right .social-container {
