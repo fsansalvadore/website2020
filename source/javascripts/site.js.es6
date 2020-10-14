@@ -186,7 +186,6 @@ if ('IntersectionObserver' in window || !!window.IntersectionObserver) {
   });
 }
 
-AOS.init();
 
 // Paroller parallax
 
