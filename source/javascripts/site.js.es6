@@ -210,3 +210,8 @@ $("#subtitle").paroller({
   type: "foreground",
   direction: "vertical"
 });
+
+
+// current year
+const currentYear = new Date().getFullYear()
+document.querySelector("#currentYear").innerText = currentYear
