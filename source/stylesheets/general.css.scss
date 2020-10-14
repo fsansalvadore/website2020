@@ -467,6 +467,20 @@ h2 {
   background-size: cover;
   z-index: 600;
   transition: opacity 0.2s ease;
+  border-radius: 6px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  box-shadow:
+    1px 1px 0px #1ae88f,
+    2px 2px 0px #1ae88f,
+    3px 3px 0px #1ae88f,
+    4px 4px 0px #1ae88f,
+    5px 5px 0px #1ae88f,
+    6px 6px 0px #1ae88f,
+    7px 7px 0px #1ae88f,
+    8px 8px 0px #1ae88f,
+    9px 9px 0px #1ae88f,
+    10px 10px 0px #1ae88f,
+    10px 10px 40px rgba(26, 232, 143, 0.1);
 }
 
 .anim {
