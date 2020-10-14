@@ -153,39 +153,13 @@ window.addEventListener('scroll', () => {
   }
 })
 
-IntersectionObserver.prototype.POLL_INTERVAL = 100; // Time in milliseconds.
+// Scroll Reveal
 
-const animItems = document.querySelectorAll('.anim');
-
-// if (browser.name === 'iOS Safari' && browser.version < 13.3) {
-//   animItems.forEach(item => {
-//   });
-// };
-
-const config = {
-  root: null,
-  rootMargin: '20% 0% -20% 0%'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.intersectionRatio > 0) {
-      entry.target.classList.add('anim_fadeInUp');
-      observer.unobserve(entry.target);
-    }
-  });
-}, config);
-
-if ('IntersectionObserver' in window || !!window.IntersectionObserver) {
-  animItems.forEach(item => {
-    observer.observe(item);
-  });
-} else {
-  animItems.forEach(item => {
-    item.classList.add('anim_fadeInUp');
-  });
-}
-
+ScrollReveal().reveal('.anim', {
+  beforeReveal: (e) => {
+    e.classList.add('anim_fadeInUp')
+  }
+});
 
 // Paroller parallax
 

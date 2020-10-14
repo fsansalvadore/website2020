@@ -430,8 +430,8 @@ h2 {
   width: 100%;
 
   a p {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.75rem;
+    // font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
     margin-top: 4px;
     opacity: 0.4;
     font-style: italic;
@@ -448,6 +448,10 @@ h2 {
   text-transform: uppercase;
   text-align: left;
   opacity: 0.75;
+}
+
+.work-link {
+  display: block;
 }
 
 .work-thumb {
@@ -472,7 +476,7 @@ h2 {
 }
 
 .anim.anim_fadeInUp {
-  animation: fadeInUp 1.5s cubic-bezier(.1,.22,.03,1) both;
+  animation: fadeInUp 1.5s cubic-bezier(.1,.22,.03,1) 0.25s both;
 }
 
 @keyframes fadeInUp {
